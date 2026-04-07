@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "DiscFit",
+  "version": "1.13.0",
+  "identifier": "com.discfit.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "DiscFit",
+        "width": 1000,
+        "height": 700,
+        "minWidth": 800,
+        "minHeight": 560,
+        "resizable": true,
+        "decorations": false,
+        "theme": "Dark"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": {
+      "WebView2Loader.dll": "WebView2Loader.dll",
+      "bin/mkisofs.exe": "bin/mkisofs.exe",
+      "bin/cygwin1.dll": "bin/cygwin1.dll"
+    },
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      }
+    }
+  }
+}
